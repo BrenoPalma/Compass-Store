@@ -1,0 +1,24 @@
+import {useState, useEffect} from 'react'
+import { getProductsbyCategory } from '../services/product'
+import { Product } from '../services/product'
+
+export const useProductsByCategory = (category:string, limit?: number, sort?: "asc" | "desc") =>{
+    const [products,setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error,setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchProductsByCategory = async () => {
+            try{
+                const data = await getProductsbyCategory(category,limit,sort);
+                setProducts(data);
+            }catch(err){
+                setError(""+err);
+            }finally{
+                setLoading(false);
+            }
+        };
+        fetchProductsByCategory();
+    },[limit,sort]);
+    return{products,loading,error}
+}
