@@ -13,7 +13,7 @@ export interface Product{
     }
 }
 
-export const getProducts = async(limit?:number, sort?: "asc" | "desc"): Promise<Product[]> =>{
+export const getProducts = async(limit?:number, sort?: string): Promise<Product[]> =>{
     let url = "/products"
     if(limit) url += `?limit=${limit}`
     if(sort) url += limit? `&sort=${sort}` : `?sort=${sort}`
@@ -26,7 +26,7 @@ export const getProductById = async(id:number): Promise<Product> =>{
     return response.data;
 }
 
-export const getProductsbyCategory = async(category:string,limit?:number, sort?: "asc" | "desc"): Promise<Product[]> =>{
+export const getProductsbyCategory = async(category:string,limit?:number, sort?: string): Promise<Product[]> =>{
     let url = `/products/category/${category}`;
     if(limit) url += `?limit=${limit}`
     if(sort) url += limit? `&sort=${sort}` : `?sort=${sort}`
