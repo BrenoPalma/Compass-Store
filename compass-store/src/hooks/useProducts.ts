@@ -1,16 +1,17 @@
 import {useState, useEffect} from 'react'
-import { getProducts } from '../services/product'
+import { getProducts, getProductsbyCategory } from '../services/product'
 import { Product } from '../services/product'
 
-export const useProducts = (limit?: number, sort?: "asc" | "desc") =>{
+export const useProducts = (category?: string, limit?: number, sort?: string) =>{
     const [products,setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error,setError] = useState<string | null>(null);
 
     useEffect(() => {
+        console.log(sort);
         const fetchProducts = async () => {
             try{
-                const data = await getProducts(limit,sort);
+                const data = category? await getProductsbyCategory(category,limit,sort) : await getProducts(limit,sort);
                 setProducts(data);
             }catch(err){
                 setError(""+err);
@@ -19,6 +20,6 @@ export const useProducts = (limit?: number, sort?: "asc" | "desc") =>{
             }
         };
         fetchProducts();
-    },[limit,sort]);
+    },[limit,sort,category]);
     return{products,loading,error}
 }
