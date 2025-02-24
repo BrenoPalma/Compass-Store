@@ -1,0 +1,27 @@
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .select-container label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .select-container select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  
+  .select-container select:focus {
+    border-color: #fbff00;
+    outline: none;
+  }
+  
