@@ -1,7 +1,7 @@
-import React from "react";
 import "../styles/ProductCard.css"
+import { Link } from "react-router-dom";
 
-import { Product } from "../../../services/product";
+import { Product } from "../services/product";
 
 interface ProductCardProps{
     product: Product
@@ -24,14 +24,17 @@ export const ProductCard = ({product}: ProductCardProps) => {
         return stars.join("");
       };
     return (
-        <div className="product-card">
+      <Link className="product-card" to={`/product/${product.id}`}>
+      
             <img src={product.image} alt={product.title}/>
+            
             <div>
             <h3>{product.title}</h3>
-            <span>{renderStars(product.rating.rate)}</span>
+            <span className="product-rating">{renderStars(product.rating.rate)}</span>
             <span>({product.rating.count})</span>
             </div>
+            
             <p>R$ {product.price}</p>
-        </div>
+        </Link>
     )
 }
