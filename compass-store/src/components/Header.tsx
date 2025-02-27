@@ -6,19 +6,23 @@ const Header = () => {
 const { isLoggedIn, handleLogout } = useAuth();
   return (
     <header className="header">
+      <Link to={'/'}>
       <div className="header-left">
         <span className="store-name">Compass Store</span>
       </div>
+      </Link>
       <nav>
         {isLoggedIn ? (
           <>
             <Link className="icon-button" to="/profile">👤</Link> {}
             <Link className="icon-button" to="/cart">🛒</Link> {}
-            <button className="login-button" onClick={handleLogout}>Sair</button>
+            <Link to={'/'}>
+            <button className="button" onClick={handleLogout}>Sair</button>
+            </Link>
           </>
         ) : (
           <Link to="/login">
-            <button className="login-button">Login</button>
+            <button className="button">Login</button>
           </Link>
         )}
         </nav>

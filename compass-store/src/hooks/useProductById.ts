@@ -2,8 +2,8 @@ import {useState, useEffect} from 'react'
 import { getProductById } from '../services/product'
 import { Product } from '../services/product'
 
-export const useProductById = (id:number) =>{
-    const [product,setProduct] = useState<Product>();
+export const useProductById = (id:string) =>{
+    const [product,setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error,setError] = useState<string | null>(null);
 

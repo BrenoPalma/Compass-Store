@@ -1,0 +1,70 @@
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.product-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.product-details {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px; /* Garante que o preço tenha espaço */
+}
+
+.product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars {
+    font-size: 1.5rem;
+    color: gold;
+}
+
+.review-count {
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-description {
+    font-size: 1rem; /* Fonte menor */
+    color: #7e7e7e;
+    text-align: justify;
+    margin-bottom: 15px;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd; /* Linha para separar */
+}
+
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+}
