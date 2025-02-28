@@ -9,7 +9,6 @@ export const useProductController = () => {
     }, [id]);
     
     const isValidId = Boolean(id);
-    console.log("id:",id);
     const { product, loading, error } = useProductById(id ?? "");
     return isValidId 
     ? { product, loading, error } 

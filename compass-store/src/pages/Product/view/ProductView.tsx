@@ -11,6 +11,7 @@ const ProductView = () => {
             <div>
             <ProductInfo product={product}></ProductInfo>
             {product && <ProductCarousel category={product.category} />}
+            {error && <p>erro ao carrgar produto</p>}
             </div>
             }   
         </div>

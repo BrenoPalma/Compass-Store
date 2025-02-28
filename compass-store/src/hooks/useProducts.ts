@@ -8,7 +8,6 @@ export const useProducts = (category?: string, limit?: number, sort?: string) =>
     const [error,setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log(sort);
         const fetchProducts = async () => {
             try{
                 const data = category? await getProductsbyCategory(category,limit,sort) : await getProducts(limit,sort);
