@@ -1,12 +1,19 @@
-import React from "react";
 import "../styles/ProductInfo.css";
 import { Product } from "../../../services/product";
+import { addToCart } from "../../../services/cart";
+import { useNavigate } from "react-router-dom";
 
 interface ProductInfoProps {
     product: Product | null;
 }
-
 export const ProductInfo = ({ product }: ProductInfoProps) => {
+    const navigate = useNavigate();
+
+    const handleBuy = async (id:string) => {
+      const response = await addToCart("3",id);
+      navigate("/carts");
+      console.log(response);
+    };
     if (!product) {
         return <p className="error-message">Produto não encontrado.</p>;
     }
@@ -38,7 +45,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
                     </div>
                     <p className="product-price">R$ {product.price.toFixed(2)}</p>
                     <p className="product-description">{product.description}</p>
-                    <button className="button">Comprar</button>
+                    <button className="button" onClick={() => handleBuy(product.id)}>Adicionar ao carrinho</button>
                 </div>
         </div>
     );

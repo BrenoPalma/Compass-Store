@@ -15,7 +15,7 @@ const { isLoggedIn, handleLogout } = useAuth();
         {isLoggedIn ? (
           <>
             <Link className="icon-button" to="/profile">👤</Link> {}
-            <Link className="icon-button" to="/cart">🛒</Link> {}
+            <Link className="icon-button" to="/carts">🛒</Link> {}
             <Link to={'/'}>
             <button className="button" onClick={handleLogout}>Sair</button>
             </Link>
