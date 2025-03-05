@@ -12,6 +12,19 @@
     align-items: center;
     gap: 12px;
   }
+
+  .header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header a:visited {
+    color: inherit;
+}
+
+.header a:active {
+    color: inherit;
+}
   
   .logo {
     width: 40px;
@@ -23,7 +36,7 @@
     font-weight: bold;
   }
   
-  .login-button {
+  .button {
     background-color: #ffd700;
     color: black;
     font-size: 16px;
@@ -34,7 +47,7 @@
     font-weight: bold;
   }
   
-  .login-button:hover {
+  .button:hover {
     background-color: #ffcc00;
   }
 
