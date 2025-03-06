@@ -37,7 +37,7 @@
   }
   
   .button {
-    background-color: #ffd700;
+    background-color: #00ff26;
     color: black;
     font-size: 16px;
     padding: 8px 16px;
@@ -48,7 +48,7 @@
   }
   
   .button:hover {
-    background-color: #ffcc00;
+    background-color: #00be39;
   }
 
   .icon-button {

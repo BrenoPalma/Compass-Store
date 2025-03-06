@@ -21,7 +21,7 @@
   }
   
   .select-container select:focus {
-    border-color: #fbff00;
+    border-color: #007720;
     outline: none;
   }
   

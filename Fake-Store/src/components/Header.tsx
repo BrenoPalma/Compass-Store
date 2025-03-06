@@ -8,7 +8,7 @@ const { isLoggedIn, handleLogout } = useAuth();
     <header className="header">
       <Link to={'/'}>
       <div className="header-left">
-        <span className="store-name">Compass Store</span>
+        <span className="store-name">Fake Store</span>
       </div>
       </Link>
       <nav>
